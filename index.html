@@ -1,0 +1,914 @@
+# Ultra Premium Luxury Website Redesign
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rudra Pratap Singh | Luxury Branding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#615e4a;
+color:white;
+overflow-x:hidden;
+position:relative;
+}
+
+/* AVATAR BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(0,180,255,0.12), transparent 25%),
+radial-gradient(circle at 80% 30%, rgba(0,120,255,0.10), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(0,255,200,0.08), transparent 30%);
+animation:waterMove 12s infinite alternate ease-in-out;
+z-index:-3;
+}
+
+/* FLOATING BUBBLES */
+
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px),
+radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+background-size:120px 120px, 80px 80px;
+animation:bubbles 20s linear infinite;
+z-index:-2;
+opacity:0.5;
+}
+
+/* WATER MOVEMENT */
+
+@keyframes waterMove{
+
+0%{
+transform:translateY(0px) scale(1);
+}
+
+50%{
+transform:translateY(-20px) scale(1.03);
+}
+
+100%{
+transform:translateY(20px) scale(1);
+}
+
+}
+
+/* BUBBLE MOVEMENT */
+
+@keyframes bubbles{
+
+0%{
+background-position:0 0, 0 0;
+}
+
+100%{
+background-position:0 -400px, 0 -250px;
+}
+
+}
+
+/* BACKGROUND GLOW */
+
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#c9a56d22,transparent 70%);
+top:-200px;
+left:-200px;
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:700px;
+height:700px;
+background:radial-gradient(circle,#ffffff08,transparent 70%);
+bottom:-300px;
+right:-300px;
+z-index:-1;
+}
+
+/* HEADER */
+
+header{
+width:100%;
+padding:22px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+background:rgba(10,10,10,0.7);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,0.06);
+z-index:999;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.ball{
+width:60px;
+height:60px;
+border-radius:50%;
+background:linear-gradient(135deg,#c9a56d,#f7d99c);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+font-weight:700;
+color:black;
+box-shadow:0 0 30px rgba(201,165,109,0.5);
+}
+
+.logo{
+font-size:32px;
+font-weight:700;
+letter-spacing:3px;
+color:#f0d199;
+}
+
+.tagline{
+font-size:11px;
+letter-spacing:3px;
+color:#888;
+margin-top:2px;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+margin-left:30px;
+font-size:15px;
+transition:0.3s;
+position:relative;
+}
+
+nav a:hover{
+color:#f0d199;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:#c9a56d;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:150px 8% 100px;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+flex:1;
+min-width:320px;
+}
+
+.hero-text h1{
+font-size:90px;
+line-height:1.05;
+margin-bottom:25px;
+font-weight:800;
+}
+
+.hero-text span{
+color:#534833;
+text-shadow:0 0 20px rgba(201,165,109,0.5);
+}
+
+.hero-text p{
+font-size:18px;
+line-height:2;
+color:#aaa;
+max-width:650px;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 36px;
+border:none;
+border-radius:12px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:0.4s;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#c9a56d,#f0d199);
+color:black;
+box-shadow:0 0 25px rgba(201,165,109,0.3);
+}
+
+.btn-primary:hover{
+transform:translateY(-5px) scale(1.03);
+}
+
+.btn-dark{
+background:#151515;
+color:white;
+border:1px solid #333;
+}
+
+.btn-dark:hover{
+background:#1d1d1d;
+transform:translateY(-5px);
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+min-width:320px;
+}
+
+.hero-image img{
+width:520px;
+max-width:100%;
+border-radius:35px;
+box-shadow:0 0 80px rgba(0,0,0,0.7);
+animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+}
+
+/* SECTION TITLE */
+
+.section-title{
+text-align:center;
+font-size:60px;
+margin-bottom:80px;
+color:#f0d199;
+}
+
+/* ARTICLES */
+
+.articles{
+padding:120px 8%;
+}
+
+/* REAL 3D EFFECTS */
+
+.article-box,
+.stat-box,
+.hero-image img,
+.about-image img{
+transform-style:preserve-3d;
+perspective:1000px;
+transition:transform 0.4s ease;
+}
+
+.article-box:hover,
+.stat-box:hover{
+transform:
+rotateX(6deg)
+rotateY(-6deg)
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 30px 60px rgba(0,0,0,0.6),
+0 0 40px rgba(201,165,109,0.15);
+}
+
+.hero-image img{
+animation:float3d 5s ease-in-out infinite;
+}
+
+@keyframes float3d{
+
+0%{
+transform:translateY(0px) rotateY(0deg);
+}
+
+50%{
+transform:translateY(-15px) rotateY(5deg);
+}
+
+100%{
+transform:translateY(0px) rotateY(0deg);
+}
+
+}.article-box{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+margin-bottom:120px;
+padding:40px;
+background:#171717;
+border-radius:35px;
+border:1px solid #222;
+flex-wrap:wrap;
+}
+
+/* REVERSE */
+
+.article-box.reverse{
+flex-direction:row-reverse;
+}
+
+/* IMAGE SIDE */
+
+.article-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+min-width:320px;
+}
+
+/* IMAGE */
+
+.article-image img{
+width:100%;
+max-width:520px;
+height:auto;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:30px;
+display:block;
+box-shadow:
+0 0 40px rgba(0,0,0,0.6),
+0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* CONTENT */
+
+.article-content{
+flex:1;
+min-width:320px;
+padding:20px;
+}
+.article-image{
+flex:1;
+display:flex;
+justify-content:center;
+min-width:320px;
+}
+.article-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.article-image img{
+width:100%;
+max-width:520px;
+height:520px;
+object-fit:cover;
+border-radius:30px;
+display:block;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+.article-content{
+flex:1;
+min-width:320px;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(20px);
+padding:60px;
+border-radius:35px;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 30px rgba(0,0,0,0.3);
+}
+
+.article-content h2{
+font-size:48px;
+margin-bottom:30px;
+color:#d9b673;
+line-height:1.2;
+}
+
+.article-content p{
+font-size:17px;
+line-height:2.1;
+color:#c8c8c8;
+margin-bottom:25px;
+text-align:justify;
+}
+
+.article-btn{
+padding:16px 34px;
+background:linear-gradient(135deg,#c9a56d,#f0d199);
+color:black;
+border:none;
+border-radius:12px;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+transition:0.4s;
+}
+
+.article-btn:hover{
+transform:scale(1.05);
+}
+
+/* STATS */
+
+.stats{
+padding:120px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.stat-box{
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(20px);
+padding:45px;
+border-radius:30px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(201,165,109,0.15);
+}
+
+.stat-box h2{
+font-size:50px;
+color:#d4af6a;
+margin-bottom:15px;
+}
+
+.stat-box p{
+font-size:16px;
+color:#aaa;
+}
+
+/* ABOUT */
+
+.about{
+padding:140px 8%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:70px;
+flex-wrap:wrap;
+}
+
+.about-image{
+flex:1;
+min-width:320px;
+text-align:center;
+}
+
+.about-image img{
+width:500px;
+max-width:100%;
+border-radius:35px;
+box-shadow:0 0 50px rgba(0,0,0,0.5);
+}
+
+.about-text{
+flex:1;
+min-width:320px;
+}
+
+.about-text h2{
+font-size:65px;
+margin-bottom:30px;
+color:#f0d199;
+}
+
+.about-text p{
+font-size:18px;
+line-height:2.1;
+color:#b8b8b8;
+margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.06);
+color:#777;
+font-size:15px;
+margin-top:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+.hero-text h1{
+font-size:55px;
+}
+
+.section-title{
+font-size:40px;
+}
+
+.article-content h2{
+font-size:34px;
+}
+
+.article-content{
+padding:35px;
+}
+
+header{
+flex-direction:column;
+gap:20px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+margin:8px 12px;
+}
+
+.hero,
+.article-box,
+.article-box.reverse,
+.about{
+flex-direction:column;
+}
+
+}
+/* FLOATING 3D BACKGROUND */
+
+.floating-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+background:
+radial-gradient(circle at top,#1f1a12 0%,#0f0f0f 60%);
+}
+
+/* ICONS */
+
+.floating-icon{
+position:absolute;
+font-size:70px;
+color:rgba(201,165,109,0.12);
+animation:float 20s linear infinite;
+user-select:none;
+filter:blur(0.3px);
+}
+
+.floating-icon:nth-child(1){
+left:5%;
+top:10%;
+animation-duration:18s;
+}
+
+.floating-icon:nth-child(2){
+left:20%;
+top:70%;
+animation-duration:24s;
+font-size:90px;
+}
+
+.floating-icon:nth-child(3){
+left:40%;
+top:20%;
+animation-duration:22s;
+}
+
+.floating-icon:nth-child(4){
+left:60%;
+top:80%;
+animation-duration:26s;
+}
+
+.floating-icon:nth-child(5){
+left:75%;
+top:15%;
+animation-duration:20s;
+font-size:100px;
+}
+
+.floating-icon:nth-child(6){
+left:90%;
+top:60%;
+animation-duration:28s;
+}
+
+/* FLOAT */
+
+@keyframes float{
+
+0%{
+transform:
+translateY(0px)
+translateX(0px)
+rotate(0deg);
+}
+
+50%{
+transform:
+translateY(-80px)
+translateX(40px)
+rotate(180deg);
+}
+
+100%{
+transform:
+translateY(0px)
+translateX(0px)
+rotate(360deg);
+}
+
+}
+</style>
+</head>
+
+<body>
+<div class="floating-bg">
+
+<div class="floating-icon">$</div>
+<div class="floating-icon">₿</div>
+<div class="floating-icon">💎</div>
+<div class="floating-icon">📈</div>
+<div class="floating-icon">🚀</div>
+<div class="floating-icon">💰</div>
+
+</div>
+<!-- HEADER -->
+
+<header>
+
+<div class="logo-area">
+
+<div class="ball">R</div>
+
+<div>
+<div class="logo">RUDRA</div>
+<div class="tagline">LUXURY BRANDING</div>
+</div>
+
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Lifestyle</a>
+<a href="#">Articles</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+Build <span>Luxury</span><br>
+Digital Influence
+</h1>
+
+<p>
+Rudra Pratap Singh creates premium digital branding experiences for modern entrepreneurs, luxury businesses and elite personal brands.
+</p>
+
+<div class="hero-buttons">
+<button class="btn btn-primary">Explore Brand</button>
+<button class="btn btn-dark">View Portfolio</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="images/img6.jpg">
+</div>
+
+</section>
+
+<!-- ARTICLES -->
+
+<section class="articles">
+
+<h1 class="section-title">Featured Articles</h1>
+
+<div class="article-box">
+<div class="article-image">
+<img src="images/img1.jpg">
+</div>
+<div class="article-content">
+<h2>Luxury Branding Psychology</h2>
+<p>
+Luxury branding creates emotional authority. Premium visuals, storytelling and presentation help businesses gain trust faster.
+</p>
+<p>
+Modern audiences connect emotionally with premium brands that communicate clarity, confidence and exclusivity.
+</p>
+<button class="article-btn">Read More</button>
+</div>
+</div>
+
+<div class="article-box reverse">
+<div class="article-image">
+<img src="images/img2.jpg">
+</div>
+<div class="article-content">
+<h2>Digital Authority Building</h2>
+<p>
+Digital authority helps creators and entrepreneurs dominate online markets through powerful communication and branding.
+</p>
+<p>
+Strong visual identity combined with consistency creates long term influence and premium positioning.
+</p>
+<button class="article-btn">Watch</button>
+</div>
+</div>
+
+<div class="article-box">
+<div class="article-image">
+<img src="images/img3.jpg">
+</div>
+<div class="article-content">
+<h2>Luxury Lifestyle Influence</h2>
+<p>
+Lifestyle branding creates aspiration and emotional connection with audiences globally.
+</p>
+<p>
+Luxury content inspires audiences and strengthens social trust for modern entrepreneurs.
+</p>
+<button class="article-btn">Explore</button>
+</div>
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>11.4M</h2>
+<p>Instagram Reach</p>
+</div>
+
+<div class="stat-box">
+<h2>48+</h2>
+<p>Brand Collaborations</p>
+</div>
+
+<div class="stat-box">
+<h2>966K</h2>
+<p>Luxury Community</p>
+</div>
+
+<div class="stat-box">
+<h2>5.3Cr</h2>
+<p>Portfolio Growth</p>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="about-image">
+<img src="images/img5.jpg">
+</div>
+
+<div class="about-text">
+
+<h2>About Rudra</h2>
+
+<p>
+Rudra Pratap Singh is a luxury branding strategist focused on creating premium digital experiences and elite online identity.
+</p>
+
+<p>
+His work combines branding psychology, luxury aesthetics and modern storytelling to help businesses dominate online attention.
+</p>
+
+<button class="btn btn-primary">Work With Me</button>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Rudra Pratap Singh — Ultra Premium Luxury Experience
+</footer>
+
+<script>
+
+const cards = document.querySelectorAll(
+'.article-box,.stat-box'
+);
+
+cards.forEach(card=>{
+
+card.addEventListener('mousemove',(e)=>{
+
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+const centerX = rect.width / 2;
+const centerY = rect.height / 2;
+
+const rotateX = ((y - centerY) / 20);
+const rotateY = ((centerX - x) / 20);
+
+card.style.transform = `
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+scale(1.03)
+`;
+
+});
+
+card.addEventListener('mouseleave',()=>{
+
+card.style.transform = `
+rotateX(0deg)
+rotateY(0deg)
+scale(1)
+`;
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+```
